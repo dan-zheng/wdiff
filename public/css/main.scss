@@ -1,11 +1,8 @@
 @import "themes/modern/variables";
-
 @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social";
 @import "lib/font-awesome/font-awesome";
-
 @import "themes/modern/modern";
-
 // Scaffolding
 // -------------------------
 
@@ -64,9 +61,32 @@ body {
 }
 
 #jsonOutput {
-    color: #fdfdfd;
+    color: rgb(186, 186, 186);
     padding: 30px;
     background-color: rgba(61, 61, 61, 0.7);
+    outline: 1px solid rgb(31, 31, 31);
+    padding: 5px;
+    margin: 5px;
+}
+
+.string {
+    color: rgb(88, 187, 164);
+}
+
+.number {
+    color: rgb(237, 160, 30);
+}
+
+.boolean {
+    color: blue;
+}
+
+.null {
+    color: magenta;
+}
+
+.key {
+    color: rgb(194, 215, 20);
 }
 
 .unauth {
@@ -74,46 +94,50 @@ body {
         text-align: center;
         font-family: $title-font-family;
         font-weight: bold;
-        padding: $title-font-size * 0.5 * 0.3 0px;
+        padding: $title-font-size * 0.5 * 0.3 0;
         font-size: $title-font-size * 0.3;
         @media (min-width: $screen-xs-min) {
             font-size: $title-font-size * 0.5;
-            padding: $title-font-size * 0.5 * 0.5 0px;
+            padding: $title-font-size * 0.5 * 0.5 0;
         }
         @media (min-width: $screen-sm-min) {
             font-size: $title-font-size * 0.7;
-            padding: $title-font-size * 0.5 * 0.7 0px;
+            padding: $title-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-md-min) {
             font-size: $title-font-size * 0.85;
-            padding: $title-font-size * 0.5 * 0.85 0px;
+            padding: $title-font-size * 0.5 * 0.85 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $title-font-size;
-            padding: $title-font-size * 0.5 0px;
+            padding: $title-font-size * 0.5 0;
         }
+
         .emph {
             font-style: italic;
         }
     }
+
     p {
         text-align: center;
         font-family: $subtitle-font-family;
         font-weight: lighter;
-        padding: $subtitle-font-size * 0.5 * 0.6 0px;
+        padding: $subtitle-font-size * 0.5 * 0.6 0;
         font-size: $subtitle-font-size * 0.6;
         @media (min-width: $screen-sm-min) {
             font-size: $subtitle-font-size * 0.7;
-            padding: $subtitle-font-size * 0.5 * 0.7 0px;
+            padding: $subtitle-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $subtitle-font-size;
-            padding: $subtitle-font-size * 0.5 0px;
+            padding: $subtitle-font-size * 0.5 0;
         }
+
         .emph {
             font-style: italic;
         }
     }
+
     .btn {
         font-family: $font-family-monospace;
         font-size: 20px;
@@ -128,15 +152,18 @@ body {
     h1 {
         font-family: $font-family-monospace;
         font-weight: 300;
+
         .emph {
             font-style: italic;
         }
     }
+
     p {
         font-family: $font-family-monospace;
         font-weight: 100;
+
         .emph {
-                font-style: italic;
+            font-style: italic;
         }
     }
 }
@@ -146,45 +173,49 @@ body {
         text-align: center;
         font-family: $title-font-family;
         font-weight: bold;
-        padding: $title-font-size * 0.5 * 0.3 0px;
+        padding: $title-font-size * 0.5 * 0.3 0;
         font-size: $title-font-size * 0.3;
         @media (min-width: $screen-xs-min) {
             font-size: $title-font-size * 0.5;
-            padding: $title-font-size * 0.5 * 0.5 0px;
+            padding: $title-font-size * 0.5 * 0.5 0;
         }
         @media (min-width: $screen-sm-min) {
             font-size: $title-font-size * 0.7;
-            padding: $title-font-size * 0.5 * 0.7 0px;
+            padding: $title-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-md-min) {
             font-size: $title-font-size * 0.85;
-            padding: $title-font-size * 0.5 * 0.85 0px;
+            padding: $title-font-size * 0.5 * 0.85 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $title-font-size;
-            padding: $title-font-size * 0.5 0px;
+            padding: $title-font-size * 0.5 0;
         }
+
         .emph {
             font-style: italic;
         }
     }
+
     p {
         font-family: $font-family-monospace;
         font-weight: normal;
-        padding: $subtitle-font-size * 0.5 * 0.6 0px;
+        padding: $subtitle-font-size * 0.5 * 0.6 0;
         font-size: $subtitle-font-size * 0.6;
         @media (min-width: $screen-sm-min) {
             font-size: $subtitle-font-size * 0.7;
-            padding: $subtitle-font-size * 0.5 * 0.7 0px;
+            padding: $subtitle-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $subtitle-font-size;
-            padding: $subtitle-font-size * 0.5 0px;
+            padding: $subtitle-font-size * 0.5 0;
         }
+
         .emph {
-                font-style: italic;
+            font-style: italic;
         }
     }
+
     .team-member {
         img {
             height: $about-image-height * 0.6;
@@ -200,6 +231,7 @@ body {
             border: 5px solid $brand-primary;
             border-radius: 50%;
         }
+
         p {
             margin-top: 10px;
         }
@@ -220,35 +252,37 @@ footer {
         vertical-align: middle;
     }
 }
-
 // Input Fields
 // -------------------------
 
 textarea {
     resize: vertical;
 }
-
 // Navbar
 // -------------------------
+
 .navbar-default {
     height: $navbar-height;
     background-color: #fff;
+
     .container {
         height: inherit;
     }
+
     .navbar-header {
         height: inherit !important;
     }
+
     .navbar-brand {
-		position: absolute;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        position: absolute;
+        padding-top: 0;
+        padding-bottom: 0;
         color: $brand-logo;
         font-family: $navbar-brand-font-family;
         font-weight: bold;
         font-size: $navbar-default-brand-size;
         height: $navbar-height;
-		white-space: nowrap;
+        white-space: nowrap;
         overflow: hidden;
         // Meetchu logo
         img {
@@ -267,6 +301,7 @@ textarea {
             padding-bottom: 16px;
         }
     }
+
     .navbar-nav {
         > li > a {
             color: #444;
@@ -275,24 +310,24 @@ textarea {
         img {
             height: 30px;
             width: 30px;
-            margin: -15px 15px -15px;
+            margin: -15px 15px;
         }
     }
+
     .navbar-collapse {
         background-color: #fff;
     }
-	.navbar-toggle {
+
+    .navbar-toggle {
         z-index: 1;
     }
 }
-
 // Alerts
 // -------------------------
 
 .alert {
     margin-top: 20px;
 }
-
 // Thumbnails
 // -------------------------
 
@@ -301,7 +336,6 @@ textarea {
     border-radius: 0;
     box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
 }
-
 // Font Icons
 // -------------------------
 
