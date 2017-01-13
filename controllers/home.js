@@ -136,6 +136,8 @@ exports.postIndex = (req, res, next) => {
     resultString = resultString.trim();
 
     var data = {
+        source: source,
+        target: target,
         distance: dist,
         result: result,
         resultString: resultString
@@ -274,7 +276,9 @@ exports.postApi = (req, res, next) => {
 
     resultString = resultString.trim();
 
-    var json = {
+    var data = {
+        source: source,
+        target: target,
         distance: dist,
         result: result,
         resultString: resultString
@@ -282,5 +286,5 @@ exports.postApi = (req, res, next) => {
 
     res.contentType('application/json');
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.json(json);
+    res.json(data);
 };

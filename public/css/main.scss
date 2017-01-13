@@ -34,12 +34,22 @@ body {
     color: #fff;
 }
 
+#results {
+    font-size: $subtitle-font-size * 0.48;
+    @media (min-width: $screen-sm-min) {
+        font-size: $subtitle-font-size * 0.54;
+    }
+    @media (min-width: $screen-lg-min) {
+        font-size: $subtitle-font-size * 0.6;
+    }
+}
+
 .red {
-    color: rgb(213, 49, 49) !important;
+    color: #ff0000 !important;
 }
 
 .green {
-    color: rgb(99, 171, 77) !important;
+    color: #6dff40 !important;
 }
 
 .pink {

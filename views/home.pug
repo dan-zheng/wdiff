@@ -15,24 +15,30 @@ block content
         .form-group
             label.col-sm-3.control-label(for='source') Source
             .col-sm-6
-                input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', autofocus, required)
+                if data && data.source
+                    input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', value=data.source, autofocus, required)
+                else
+                    input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', autofocus, required)
         .form-group
             label.col-sm-3.control-label(for='target') Target
             .col-sm-6
-                input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', autofocus, required)
+                if data && data.target
+                    input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', value=data.target, autofocus, required)
+                else
+                    input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', autofocus, required)
         .form-group
             .col-sm-offset-3.col-sm-6
                 .btn-group
-                    button.btn.btn-primary(type='submit', formaction="/")
+                    button#parse-btn.btn.btn-primary(type='submit', formaction="/")
                         i.fa.fa-gears
                         | Parse
-                    button.btn.btn-primary(type='submit', formaction="/api")
+                    button#api-btn.btn.btn-primary(type='submit', formaction="/api")
                         i.fa.fa-cloud
                         | API
     if data
         .page-header
             h3 Results
-        div.text-center
+        div.text-center#results
             each entry in data.result
                 if entry.type == "identical"
                     each value, index in entry.value
