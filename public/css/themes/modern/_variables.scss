@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Benton Sans";
+    src: url("../../fonts/benton-sans.otf");
+};
+
+@font-face {
+    font-family: "Phenomena";
+    src: url("../../fonts/phenomena-extrabold.otf");
+    font-weight: bolder;
+};
+
+@font-face {
+    font-family: "Uni Sans";
+    src: url("../../fonts/uni-sans-thin.otf");
+};
+@font-face {
+    font-family: "Uni Sans";
+    src: url("../../fonts/uni-sans-thin-italic.otf");
+    font-style: italic;
+};
+@font-face {
+    font-family: "Uni Sans";
+    src: url("../../fonts/uni-sans-heavy.otf");
+    font-weight: bold;
+};
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,300,700';
+// Colors
+// -------------------------
+
+$gray-lighter: #f5f5f5;
+$gray-light: #e0e0e0;
+$gray: #737373;
+$gray-dark: #404040;
+$gray-darker: #121212;
+
+$brand-primary: #58498e;
+$brand-success: #0f9d58;
+$brand-warning: #f4b400;
+$brand-danger: #d80017;
+$brand-info: #5bc0dd;
+$brand-logo: #5c4b92;
+
+// Typography
+// -------------------------
+
+$font-family-sans-serif: "Benton Sans";
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-monospace !default;
+
+$font-size-base: 13px;
+$headings-font-family: $font-family-monospace, sans-serif;
+$headings-font-weight: normal;
+$text-color: $gray-darker;
+$link-color: $brand-primary;
+$link-hover-color: $gray-darker;
+
+$navbar-brand-font-family: $font-family-monospace;
+$title-font-family: $font-family-monospace;
+$title-font-size: 72px;
+$subtitle-font-family: $font-family-monospace;
+$subtitle-font-size: 30px;
+
+// Dropdowns
+// -------------------------
+
+$dropdown-link-color: $gray-darker;
+
+// Buttons
+// -------------------------
+@import "../../lib/bootstrap/mixins/_buttons.scss";
+
+$btn-default-bg: $gray-lighter;
+$btn-default-color: $gray-darker;
+$btn-primary-bg: #784cab;
+$btn-primary-color: #fff;
+
+// Forms
+// -------------------------
+
+$input-border-radius: 2px;
+$input-border-focus: #999;
+$input-border: #f0f0f0;
+$input-color: #444;
+$input-color-placeholder: #999;
+$input-height-base: 44px;
+
+// Form states and alerts
+// -------------------------
+
+$state-success-bg: $brand-success;
+$state-info-bg: $brand-info;
+$state-warning-bg: $brand-warning;
+$state-danger-bg: $brand-danger;
+
+// Navbar
+// -------------------------
+
+$navbar-height: 64px;
+$navbar-default-bg: rgba(255,255,255,0.95);
+$navbar-default-link-color: $gray-darker;
+$navbar-default-link-active-color: $brand-primary;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-brand-color: $gray-darker;
+$navbar-default-brand-hover-color: $brand-primary;
+$navbar-default-brand-size: 28px;
+
+// About
+// -------------------------
+
+$about-image-height: 200px;

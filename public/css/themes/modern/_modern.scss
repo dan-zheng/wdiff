@@ -1,0 +1,99 @@
+// Typography
+// -------------------------
+
+a {
+    transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul,
+p {
+    font-size: 14px;
+}
+
+.text-danger {
+    color: $brand-danger;
+}
+
+// Dropdowns
+// -------------------------
+
+.dropdown-menu > li > a {
+    font-weight: 300;
+}
+
+// Buttons
+// -------------------------
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 3px;
+    transition: all .4s cubic-bezier(.24,.45,.46,.92);
+}
+
+.btn-social {
+    padding: 10px 50px;
+
+    :first-child {
+        width: 38px;
+        line-height: 38px;
+    }
+}
+
+.btn-link {
+
+    &:hover {
+        color: $gray-darker;
+        text-decoration: none;
+        background-color: transparent;
+    }
+}
+
+// Form states and alerts
+// -------------------------
+
+.alert {
+    color: #fff;
+}
+
+// Navbar
+// -------------------------
+
+.navbar-default {
+    border: 0;
+    box-shadow: 0 1px 5px rgba(0,0,0,.15);
+
+    .navbar-nav {
+        > li > a {
+            transition: color .4s cubic-bezier(.24,.45,.46,.92);
+        }
+    }
+}
+
+// Code
+// -------------------------
+
+code, pre {
+    font-family: $font-family-monospace;
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: inherit;
+}
+
+code {
+    padding: .2em;
+    margin: 0;
+    font-size: .85em;
+    color: $brand-logo;
+    background-color: rgba(#dfdfdf, 0.4);
+}
+
+code:after, code:before {
+    letter-spacing: -.4em;
+    content: "\00a0";
+}

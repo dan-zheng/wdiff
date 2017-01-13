@@ -1,0 +1,60 @@
+extends layout
+
+block content
+    div.main.unauth
+        h1
+            code wdiff
+        hr
+        p A 
+            code diff
+            | -like utility for visualizing distance between sentences.
+    .page-header
+        h3 Input
+    form.form-horizontal(id='parse-form', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+            label.col-sm-3.control-label(for='source') Source
+            .col-sm-6
+                input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', autofocus, required)
+        .form-group
+            label.col-sm-3.control-label(for='target') Target
+            .col-sm-6
+                input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', autofocus, required)
+        .form-group
+            .col-sm-offset-3.col-sm-6
+                .btn-group
+                    button.btn.btn-primary(type='submit', formaction="/")
+                        i.fa.fa-gears
+                        | Parse
+                    button.btn.btn-primary(type='submit', formaction="/api")
+                        i.fa.fa-cloud
+                        | API
+    if data
+        .page-header
+            h3 Results
+        div.text-center
+            each entry in data.result
+                if entry.type == "identical"
+                    each value, index in entry.value
+                        span= value
+                        if index < entry.value.length - 1
+                            span= " "
+                    span= " "
+                else if entry.type == "deletion"
+                    span.red
+                        span= "(-"
+                        each value, index in entry.value
+                            span= value
+                            if index < entry.value.length - 1
+                                span= " "
+                        span= ")"
+                    span= " "
+                else if entry.type == "insertion"
+                    span.green
+                        span= "(+"
+                        each value, index in entry.value
+                            span= value
+                            if index < entry.value.length - 1
+                                span= " "
+                        span= ")"
+                    span= " "
