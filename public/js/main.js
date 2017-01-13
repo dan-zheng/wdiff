@@ -2,10 +2,10 @@ const parse = require('../../lib/parse.js');
 
 $(document).ready(function() {
     $('#parse-btn').click(function() {
-        var source = $('input[name=source]').val();
-        var target = $('input[name=target]').val();
+        var a = $('input[name=string1]').val();
+        var b = $('input[name=string2]').val();
 
-        var data = parse.parseSentences(source, target);
+        var data = parse.parseSentences(a, b);
         if (!data) {
             return;
         }
@@ -15,13 +15,8 @@ $(document).ready(function() {
         html += '<div class=\'page-header\'><h3>Results</h3></div><div class=\'text-center\'>';
         for (i = 0; i < data.result.length; i++) {
             var entry = data.result[i];
-            if (entry.type == 'identical') {
-                for (j = 0; j < entry.value.length; j++) {
-                    html += '<span>' + entry.value[j] + '</span>';
-                    if (j < entry.value.length - 1) {
-                        html += '<span> </span>';
-                    }
-                }
+            if (entry.type == 'common') {
+                html += '<span>' + entry.value.join(' ') + '</span>';
                 if (i < data.result.length - 1) {
                     html += '<span> </span>';
                 }

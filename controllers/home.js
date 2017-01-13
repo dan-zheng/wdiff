@@ -15,20 +15,22 @@ exports.getIndex = (req, res) => {
  * Parse sentence and produce JSON output.
  */
 exports.postApi = (req, res, next) => {
-    req.assert('source', 'Source sentence cannot be blank.').notEmpty();
-    req.assert('target', 'Target sentence cannot be blank.').notEmpty();
+    req.assert('string1', 'First string cannot be blank.').notEmpty();
+    req.assert('string2', 'Second string cannot be blank.').notEmpty();
 
     const errors = req.validationErrors();
+
+    console.log(req.body);
 
     if (errors) {
         req.flash('errors', errors);
         return res.redirect('/');
     }
 
-    let source = req.body.source;
-    let target = req.body.target;
+    let a = req.body.string1;
+    let b = req.body.string2;
 
-    var data = parse.parseSentences(source, target);
+    var data = parse.parseSentences(a, b);
 
     res.contentType('application/json');
     res.setHeader("Access-Control-Allow-Origin", "*");

@@ -20,7 +20,9 @@ const browserify = require('browserify-middleware');
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
-dotenv.load({ path: '.env' });
+dotenv.load({
+    path: '.env'
+});
 
 /**
  * Connect to MongoDB.
@@ -55,7 +57,9 @@ app.use(sass({
 app.get('/js/bundle.js', browserify(__dirname + '/public/js/main.js'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(expressValidator());
 app.use(session({
     resave: true,
@@ -83,15 +87,17 @@ app.use((req, res, next) => {
 app.use(function(req, res, next) {
     // After successful login, redirect back to the intended page
     if (!req.user &&
-            req.path !== '/login' &&
-            req.path !== '/signup' &&
-            !req.path.match(/^\/auth/) &&
-            !req.path.match(/\./)) {
+        req.path !== '/login' &&
+        req.path !== '/signup' &&
+        !req.path.match(/^\/auth/) &&
+        !req.path.match(/\./)) {
         req.session.returnTo = req.path;
     }
     next();
 });
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: 31557600000
+}));
 
 /**
  * Primary app routes.

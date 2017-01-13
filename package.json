@@ -20,6 +20,7 @@
     "errorhandler": "^1.4.3",
     "express": "^4.14.0",
     "express-flash": "^0.0.2",
+    "express-minify": "^0.2.0",
     "express-session": "^1.14.0",
     "express-validator": "^2.20.8",
     "lusca": "^1.4.1",

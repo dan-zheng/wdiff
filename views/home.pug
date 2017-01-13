@@ -13,19 +13,19 @@ block content
     form.form-horizontal(id='parse-form', method='POST', target='_blank')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-            label.col-sm-3.control-label(for='source') Source
+            label.col-sm-3.control-label(for='string1') Source
             .col-sm-6
-                if data && data.source
-                    input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', value=data.source, autofocus, required)
+                if data && data.string1
+                    input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', value=data.string1, autofocus, required)
                 else
-                    input.form-control(type='source', name='source', id='source', placeholder='Source sentence.', autofocus, required)
+                    input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', autofocus, required)
         .form-group
-            label.col-sm-3.control-label(for='target') Target
+            label.col-sm-3.control-label(for='string2') Target
             .col-sm-6
-                if data && data.target
-                    input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', value=data.target, autofocus, required)
+                if data && data.string2
+                    input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', value=data.string2, autofocus, required)
                 else
-                    input.form-control(type='target', name='target', id='target', placeholder='Target sentence.', autofocus, required)
+                    input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', autofocus, required)
         .form-group
             .col-sm-offset-3.col-sm-6
                 .btn-group
