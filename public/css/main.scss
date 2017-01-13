@@ -45,15 +45,28 @@ body {
 }
 
 .red {
-    color: #ff0000 !important;
+    height: inherit;
+    color: rgb(255, 0, 0) !important;
+    //background-color: rgba(236, 199, 199, 0.5) !important;
 }
 
 .green {
-    color: #6dff40 !important;
+    color: rgb(79, 254, 27) !important;
+    //background-color: rgba(190, 223, 184, 0.5) !important;
 }
 
 .pink {
     color: #f77380;
+}
+
+#stringOutput {
+    padding: 30px;
+}
+
+#jsonOutput {
+    color: #fdfdfd;
+    padding: 30px;
+    background-color: rgba(61, 61, 61, 0.7);
 }
 
 .unauth {

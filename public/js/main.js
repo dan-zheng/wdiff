@@ -12,7 +12,7 @@ $(document).ready(function() {
         var i, j;
         i = j = 0;
         var html = '';
-        html += '<div class=\'page-header\'><h3>Results</h3></div><div class=\'text-center\'>';
+        html += '<div class=\'page-header\'><h3>Results</h3></div><div class=\'text-center\' id=\'stringOutput\'>';
         for (i = 0; i < data.result.length; i++) {
             var entry = data.result[i];
             if (entry.type == 'common') {
@@ -21,36 +21,19 @@ $(document).ready(function() {
                     html += '<span> </span>';
                 }
             } else if (entry.type == 'deletion') {
-                html += '<span class=\'red\'>';
-                html += '(-';
-                for (j = 0; j < entry.value.length; j++) {
-                    html += '<span>' + entry.value[j] + '</span>';
-                    if (j < entry.value.length - 1) {
-                        html += '<span> </span>';
-                    }
-                }
-                html += ')';
-                html += '</span>';
+                html += '<span class=\'red\'>' + '(-' + entry.value.join(' ') + ')' + '</span>';
                 if (i < data.result.length - 1) {
                     html += '<span> </span>';
                 }
             } else if (entry.type == 'insertion') {
-                html += '<span class=\'green\'>';
-                html += '(+';
-                for (j = 0; j < entry.value.length; j++) {
-                    html += '<span>' + entry.value[j] + '</span>';
-                    if (j < entry.value.length - 1) {
-                        html += '<span> </span>';
-                    }
-                }
-                html += ')';
-                html += '</span>';
+                html += '<span class=\'green\'>' + '(-' + entry.value.join(' ') + ')' + '</span>';
                 if (i < data.result.length - 1) {
                     html += '<span> </span>';
                 }
             }
         }
         html += '</div></div>';
+        html += '<pre id=\'jsonOutput\'>' + JSON.stringify(data.result, null, 4) + '</pre>';
         $('#results').html(html);
     });
 });
