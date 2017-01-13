@@ -10,7 +10,7 @@ block content
             | -like utility for visualizing distance between sentences.
     .page-header
         h3 Input
-    form.form-horizontal(id='parse-form', method='POST')
+    form.form-horizontal(id='parse-form', method='POST', target='_blank')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
             label.col-sm-3.control-label(for='source') Source
@@ -29,38 +29,11 @@ block content
         .form-group
             .col-sm-offset-3.col-sm-6
                 .btn-group
-                    button#parse-btn.btn.btn-primary(type='submit', formaction="/")
+                    button#parse-btn.btn.btn-primary(type='button')
                         i.fa.fa-gears
                         | Parse
                     button#api-btn.btn.btn-primary(type='submit', formaction="/api")
                         i.fa.fa-cloud
                         | API
-    if data
-        .page-header
-            h3 Results
-        div.text-center#results
-            each entry in data.result
-                if entry.type == "identical"
-                    each value, index in entry.value
-                        span= value
-                        if index < entry.value.length - 1
-                            span= " "
-                    span= " "
-                else if entry.type == "deletion"
-                    span.red
-                        span= "(-"
-                        each value, index in entry.value
-                            span= value
-                            if index < entry.value.length - 1
-                                span= " "
-                        span= ")"
-                    span= " "
-                else if entry.type == "insertion"
-                    span.green
-                        span= "(+"
-                        each value, index in entry.value
-                            span= value
-                            if index < entry.value.length - 1
-                                span= " "
-                        span= ")"
-                    span= " "
+                        
+    #results

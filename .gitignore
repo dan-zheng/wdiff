@@ -20,8 +20,9 @@ tmp
 node_modules
 bower_components
 
-# Compiled CSS
+# Compiled CSS/JS
 public/css/main.css
+public/js/bundle.js
 
 # Editors
 .idea
