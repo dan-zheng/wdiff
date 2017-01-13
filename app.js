@@ -52,7 +52,7 @@ app.use(sass({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public')
 }));
-app.get('/public/js/bundle.js', browserify(__dirname + '/public/js/main.js'));
+app.get('/js/bundle.js', browserify(__dirname + '/public/js/main.js'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
