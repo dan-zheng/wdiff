@@ -15,6 +15,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const expressValidator = require('express-validator');
 const sass = require('node-sass-middleware');
+const browserify = require('browserify-middleware');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -51,6 +52,7 @@ app.use(sass({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public')
 }));
+app.get('/public/js/bundle.js', browserify(__dirname + '/public/js/main.js'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
