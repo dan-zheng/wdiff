@@ -99,6 +99,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
  * Primary app routes.
  */
 app.get('/', homeController.getIndex);
+app.get('/api', homeController.getApi);
 app.post('/api', homeController.postApi);
 
 /**
