@@ -6,7 +6,7 @@ $(document).ready(function() {
         var b = $('input[name=b]').val();
 
         createCookie('a', a, 1);
-        createCookie('b', a, 1);
+        createCookie('b', b, 1);
 
         var data = parse.parseSentences(a, b);
         if (!data) {
