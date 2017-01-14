@@ -26,7 +26,7 @@ $(document).ready(function() {
                     html += '<span> </span>';
                 }
             } else if (entry.type == 'insertion') {
-                html += '<span class=\'green\'>' + '(-' + entry.value.join(' ') + ')' + '</span>';
+                html += '<span class=\'green\'>' + '(+' + entry.value.join(' ') + ')' + '</span>';
                 if (i < data.result.length - 1) {
                     html += '<span> </span>';
                 }
