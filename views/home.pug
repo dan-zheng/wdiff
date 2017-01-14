@@ -1,39 +1,40 @@
 extends layout
 
 block content
-    div.main.unauth
+    div.main.unauth.shadow
         h1
-            code wdiff
+            code.shadow-light wdiff
         hr
         p A 
-            code diff
+            a(href='https://en.wikipedia.org/wiki/Diff_utility')
+                code diff
             | -like utility for visualizing distance between sentences.
-    .page-header
-        h3 Input
-    form.form-horizontal(id='parse-form', method='POST', target='_blank')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .form-group
-            label.col-sm-3.control-label(for='string1') Source
-            .col-sm-6
-                if data && data.string1
-                    input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', value=data.string1, autofocus, required)
-                else
-                    input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', autofocus, required)
-        .form-group
-            label.col-sm-3.control-label(for='string2') Target
-            .col-sm-6
-                if data && data.string2
-                    input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', value=data.string2, autofocus, required)
-                else
-                    input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', autofocus, required)
-        .form-group
-            .col-sm-offset-3.col-sm-6
-                .btn-group
-                    button#parse-btn.btn.btn-primary(type='button')
-                        i.fa.fa-gears
-                        | Parse
-                    button#api-btn.btn.btn-primary(type='submit', formaction="/api")
-                        i.fa.fa-cloud
-                        | API
-                        
+    .shadow
+        .page-header
+            h3 Input
+        form.form-horizontal(id='parse-form', method='POST', target='_blank')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+                label.col-sm-3.control-label(for='string1') Source
+                .col-sm-6
+                    if data && data.string1
+                        input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', value=data.string1, autofocus, required)
+                    else
+                        input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', autofocus, required)
+            .form-group
+                label.col-sm-3.control-label(for='string2') Target
+                .col-sm-6
+                    if data && data.string2
+                        input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', value=data.string2, autofocus, required)
+                    else
+                        input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', autofocus, required)
+            .form-group
+                .col-sm-offset-3.col-sm-6
+                    .btn-group
+                        button#parse-btn.btn.btn-primary(type='button')
+                            i.fa.fa-gears
+                            | Parse
+                        button#api-btn.btn.btn-primary(type='submit', formaction="/api")
+                            i.fa.fa-cloud
+                            | API
     #results
