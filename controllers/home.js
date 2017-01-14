@@ -7,8 +7,11 @@ const parse = require('../lib/parse');
  * Home page.
  */
 exports.getIndex = (req, res) => {
+    console.log(req.cookies);
     res.render('home', {
-        title: 'Home'
+        title: 'Home',
+        a: req.cookies.a || undefined,
+        b: req.cookies.b || undefined
     });
 };
 

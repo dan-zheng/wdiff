@@ -5,6 +5,7 @@ const express = require('express');
 const compression = require('compression');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 const logger = require('morgan');
 const errorHandler = require('errorhandler');
 const lusca = require('lusca');
@@ -60,6 +61,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cookieParser());
 app.use(expressValidator());
 app.use(session({
     resave: true,

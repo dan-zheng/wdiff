@@ -17,15 +17,15 @@ block content
             .form-group
                 label.col-sm-3.control-label(for='a') Source
                 .col-sm-6
-                    if data && data.a
-                        input.form-control(type='a', name='a', id='a', placeholder='Source sentence.', value=data.a, autofocus, required)
+                    if a
+                        input.form-control(type='a', name='a', id='a', placeholder='Source sentence.', value=a, autofocus, required)
                     else
                         input.form-control(type='a', name='a', id='a', placeholder='First sentence.', autofocus, required)
             .form-group
                 label.col-sm-3.control-label(for='b') Target
                 .col-sm-6
-                    if data && data.b
-                        input.form-control(type='b', name='b', id='b', placeholder='Target sentence.', value=data.b, autofocus, required)
+                    if b
+                        input.form-control(type='b', name='b', id='b', placeholder='Target sentence.', value=b, autofocus, required)
                     else
                         input.form-control(type='b', name='b', id='b', placeholder='Second sentence.', autofocus, required)
             .form-group

@@ -16,6 +16,7 @@
     "cheerio": "^0.20.0",
     "compression": "^1.6.2",
     "connect-mongo": "^1.2.1",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^2.0.0",
     "errorhandler": "^1.4.3",
     "express": "^4.14.0",
