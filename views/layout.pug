@@ -7,10 +7,8 @@ html
         meta(name='theme-color' content='#4a4090')
         meta(name='csrf-token', content=_csrf)
         title wdiff
-        link(rel='shortcut icon', href='/watch.png')
+        link(rel='shortcut icon', href='/language.png')
         link(rel='stylesheet', href='/css/main.css')
-        if (title=='Home')
-            link(rel='stylesheet', href='/css/lib/prism.css')
 
     if (title=='Home' && !user)
         body.purple
@@ -29,7 +27,6 @@ html
     script(src='/js/lib/bootstrap.min.js')
     if (title=='Home')
         script(src='/js/bundle.js')
-        script(src='/js/lib/prism.js')
 
     script.
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
