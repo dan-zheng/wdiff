@@ -12,7 +12,7 @@ $(document).ready(function() {
         var i, j;
         i = j = 0;
         var html = '';
-        html += '<div class=\'page-header\'><h3>Results</h3></div><div class=\'text-center\' id=\'stringOutput\'>';
+        html += '<div class=\'page-header\'><h3>Results</h3></div><div id=\'output\'><div class=\'text-center\' id=\'stringOutput\'>';
         for (i = 0; i < data.result.length; i++) {
             var entry = data.result[i];
             if (entry.type == 'common') {
@@ -32,6 +32,8 @@ $(document).ready(function() {
                 }
             }
         }
+        html += '</div><div class=\'text-center\' id=\'distOutput\'>';
+        html += '<span>Distance: ' + data.distance + ' tokens</span>';
         html += '</div></div>';
         html += '<pre id=\'jsonOutput\'>' + syntaxHighlight(JSON.stringify(data, null, 4)) + '</pre>';
         $('#results').html(html);

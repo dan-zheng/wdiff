@@ -67,8 +67,12 @@ body {
     color: #f77380;
 }
 
-#stringOutput {
-    padding: 30px;
+#output {
+    padding: 20px;
+}
+
+#stringOutput, #distOutput {
+    padding: 10px;
 }
 
 #jsonOutput {
