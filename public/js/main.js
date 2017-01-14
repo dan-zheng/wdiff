@@ -2,8 +2,8 @@ const parse = require('../../lib/parse.js');
 
 $(document).ready(function() {
     $('#parse-btn').click(function() {
-        var a = $('input[name=string1]').val();
-        var b = $('input[name=string2]').val();
+        var a = $('input[name=a]').val();
+        var b = $('input[name=b]').val();
 
         var data = parse.parseSentences(a, b);
         if (!data) {

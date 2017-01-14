@@ -12,22 +12,22 @@ block content
     .shadow
         .page-header
             h3 Input
-        form.form-horizontal(id='parse-form', method='POST', target='_blank')
+        form.form-horizontal(id='parse-form', method='POST', b='_blank')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
-                label.col-sm-3.control-label(for='string1') Source
+                label.col-sm-3.control-label(for='a') Source
                 .col-sm-6
-                    if data && data.string1
-                        input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', value=data.string1, autofocus, required)
+                    if data && data.a
+                        input.form-control(type='a', name='a', id='a', placeholder='Source sentence.', value=data.a, autofocus, required)
                     else
-                        input.form-control(type='string1', name='string1', id='string1', placeholder='First sentence.', autofocus, required)
+                        input.form-control(type='a', name='a', id='a', placeholder='First sentence.', autofocus, required)
             .form-group
-                label.col-sm-3.control-label(for='string2') Target
+                label.col-sm-3.control-label(for='b') Target
                 .col-sm-6
-                    if data && data.string2
-                        input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', value=data.string2, autofocus, required)
+                    if data && data.b
+                        input.form-control(type='b', name='b', id='b', placeholder='Target sentence.', value=data.b, autofocus, required)
                     else
-                        input.form-control(type='string2', name='string2', id='string2', placeholder='Second sentence.', autofocus, required)
+                        input.form-control(type='b', name='b', id='b', placeholder='Second sentence.', autofocus, required)
             .form-group
                 .col-sm-offset-3.col-sm-6
                     .btn-group

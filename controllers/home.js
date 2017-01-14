@@ -17,8 +17,8 @@ exports.getIndex = (req, res) => {
  * Parse sentence and produce JSON output.
  */
 exports.getApi = (req, res, next) => {
-    req.assert('string1', 'First string cannot be blank.').notEmpty();
-    req.assert('string2', 'Second string cannot be blank.').notEmpty();
+    req.assert('a', 'First string cannot be blank.').notEmpty();
+    req.assert('b', 'Second string cannot be blank.').notEmpty();
 
     const errors = req.validationErrors();
 
@@ -27,8 +27,8 @@ exports.getApi = (req, res, next) => {
         return res.redirect('/');
     }
 
-    let a = req.query.string1 || req.body.string1;
-    let b = req.query.string2 || req.body.string2;
+    let a = req.query.a || req.body.a;
+    let b = req.query.b || req.body.b;
 
     var data = parse.parseSentences(a, b);
 
@@ -42,8 +42,8 @@ exports.getApi = (req, res, next) => {
  * URL-encoded POST parameters and redirect to GET /api.
  */
 exports.postApi = (req, res, next) => {
-    req.assert('string1', 'First string cannot be blank.').notEmpty();
-    req.assert('string2', 'Second string cannot be blank.').notEmpty();
+    req.assert('a', 'First string cannot be blank.').notEmpty();
+    req.assert('b', 'Second string cannot be blank.').notEmpty();
 
     const errors = req.validationErrors();
 
@@ -52,5 +52,5 @@ exports.postApi = (req, res, next) => {
         return res.redirect('/');
     }
 
-    res.redirect('/api?string1=' + qs.escape(req.body.string1) + '&string2=' + qs.escape(req.body.string2));
+    res.redirect('/api?a=' + qs.escape(req.body.a) + '&b=' + qs.escape(req.body.b));
 };
