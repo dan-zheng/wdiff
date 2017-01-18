@@ -12,6 +12,9 @@ block content
     .shadow
         .page-header
             h3 Input
+        p Note: currently only supports word tokenization. More tokenizer options and 
+            code.shadow-light diff
+            |  info will be added in the future.
         form.form-horizontal(id='parse-form', method='POST', b='_blank')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
